@@ -1,6 +1,6 @@
 body {
 	background: #ffffff;
-	color: #000000;
+	color: #ffffff;
 	font-family: 'Roboto', sans-serif;
 
 }
@@ -30,6 +30,13 @@ h2 {
 	border-radius: 37px;
 }
 
+article{
+	position: absolute;
+	text-align: center;
+	left: 40px;
+	top: 42px;
+	font-size: 20px;
+}
 
 .travel {
 	position: absolute;

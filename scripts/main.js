@@ -1,5 +1,5 @@
 
-
+//WEATHER API
 function getAPIdata() {
 
 	var url = 'https://api.openweathermap.org/data/2.5/weather';
@@ -36,6 +36,7 @@ function fromKtoC(kelvin){
 function onAPISuccess(response) {
 	console.log(response.main);
 
+	var iconUrl = 'http://openweathermap.org/img/w/' + response.weather[0].icon+'.png';
 	var city = response.name;
 	var temp = response.main.temp;
 	var feelsLike = response.main.feels_like;
@@ -44,7 +45,9 @@ function onAPISuccess(response) {
 	var humidity = response.main.humidity;
 	var pressure = response.main.pressure;
 
-	document.getElementById('weather').innerHTML = city + '<br>' + fromKtoC(temp);
+	document.getElementById('weather').innerHTML = city + '<br>' + '<img src="http://openweathermap.org/img/w/'+response.weather[0].icon+'.png">' + '<br>' + response.weather[0].description + '<br> <br>' + fromKtoC(temp) +'ºC';
 }
 
 getAPIdata();
+
+
