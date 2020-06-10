@@ -1,0 +1,52 @@
+body {
+	background: #ffffff;
+	color: #000000;
+	font-family: 'Roboto', sans-serif;
+
+}
+
+h2 {
+	position: absolute;
+	font-size: 36px;
+}
+
+.asteroids {
+	position: absolute;
+	width: 224px;
+	height: 243px;
+	left: 38px;
+	top: 38px;
+	background: #326273;
+	border-radius: 37px;
+}
+
+.weather {
+	position: absolute;
+	width: 224px;
+	height: 243px;
+	left: 38px;
+	top: 298px;
+	background: #5C9EAD;
+	border-radius: 37px;
+}
+
+
+.travel {
+	position: absolute;
+	width: 224px;
+	height: 243px;
+	left: 38px;
+	top: 557px;
+	background: #5C9EAD;
+	border-radius: 37px;
+}
+
+.elevation {
+	position: absolute;
+	width: 224px;
+	height: 243px;
+	left: 38px;
+	top: 817px;
+	background: #326273;
+	border-radius: 37px;
+}
