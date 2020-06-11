@@ -48,7 +48,8 @@ function onAPISuccess(response) {
 
 	// document.getElementById('weather').innerHTML = city + '<br>' + '<img src="http://openweathermap.org/img/w/'+response.weather[0].icon+'.png">' + '<br>' + description + '<br> <br>' + fromKtoC(temp) +'ºC';
 	document.getElementById('city').innerHTML = city;
-	document.getElementById('icon').innerHTML = '<img src="http://openweathermap.org/img/w/'+response.weather[0].icon+'.png">';
+//	document.getElementById('icon').innerHTML = '<img src="http://openweathermap.org/img/w/'+response.weather[0].icon+'.png">';
+	document.getElementById("iconWorking").src = "http://openweathermap.org/img/w/"+response.weather[0].icon+".png";
 	document.getElementById('description').innerHTML = description;
 	document.getElementById('temp').innerHTML = fromKtoC(temp) +'ºC';
 }

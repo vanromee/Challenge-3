@@ -23,6 +23,12 @@ h2 {
 	left: 60px;
 }
 
+.asPos {
+	position: absolute;
+	left: 55px;
+	top: 60px;
+}
+
 p {
 	position: absolute;
 	text-align: center;
@@ -42,15 +48,14 @@ p {
 	background: #5C9EAD;
 	border-radius: 37px;
 	text-align: center;
+	align-content: center;
 }
 
-/*article{
+.vector1 {
 	position: absolute;
-	text-align: center;
-	left: 40px;
-	top: 42px;
-	font-size: 20px;
-}*/
+	left: 195px;
+	top: 98px;
+}
 
 .city {
 	position: absolute;
@@ -61,10 +66,14 @@ p {
 
 img {
 	position: absolute;
+	
+}
+
+
+.img1 {
+	position: absolute;
 	left: 60px;
 	top: 50px;
-	width: 105px;
-	height: 105px;
 }
 
 .description {
@@ -92,8 +101,13 @@ img {
 	border-radius: 37px;
 }
 
+.vector2 {
+	position: absolute;
+	left: 195px;
+	top: 100px;
+}
 
-.elevation {
+.movie {
 	position: absolute;
 	width: 224px;
 	height: 243px;
