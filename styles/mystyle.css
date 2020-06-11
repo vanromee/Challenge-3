@@ -20,7 +20,7 @@ h2 {
 	border-radius: 37px;
 }
 
-.weather {
+.weather-box {
 	position: absolute;
 	width: 224px;
 	height: 243px;
@@ -28,15 +28,51 @@ h2 {
 	top: 298px;
 	background: #5C9EAD;
 	border-radius: 37px;
+	text-align: center;
 }
 
-article{
+.vector1 {
+	position: absolute;
+	left: 195px;
+	top: 98px;
+}
+
+/*article{
 	position: absolute;
 	text-align: center;
 	left: 40px;
 	top: 42px;
 	font-size: 20px;
+}*/
+
+.city {
+	position: absolute;
+	font-size: 24px;
+	left: 40px;
+	top: 1px;
 }
+
+.icon {
+	position: absolute;
+	left: 75px;
+	top: 65px;
+}
+
+.description {
+	position: absolute;
+	font-size: 18px;
+	left: 35px;
+	top: 130px ;
+}
+
+.temp {
+	position: absolute;
+	font-size: 45px;
+	left: 30px;
+	top: 175px;
+}
+
+
 
 .travel {
 	position: absolute;
@@ -46,6 +82,12 @@ article{
 	top: 557px;
 	background: #5C9EAD;
 	border-radius: 37px;
+}
+
+.vector2 {
+	position: absolute;
+	left: 195px;
+	top: 100px;
 }
 
 .elevation {

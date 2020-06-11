@@ -36,16 +36,21 @@ function fromKtoC(kelvin){
 function onAPISuccess(response) {
 	console.log(response.main);
 
-	var iconUrl = 'http://openweathermap.org/img/w/' + response.weather[0].icon+'.png';
+	var icon = 'http://openweathermap.org/img/w/' + response.weather[0].icon+'.png';
+	var description = response.weather[0].description;
 	var city = response.name;
 	var temp = response.main.temp;
-	var feelsLike = response.main.feels_like;
-	var tempMax = response.main.temp_max;
-	var tempMin = response.main.temp_min;
-	var humidity = response.main.humidity;
-	var pressure = response.main.pressure;
+	// var feelsLike = response.main.feels_like;
+	// var tempMax = response.main.temp_max;
+	// var tempMin = response.main.temp_min;
+	// var humidity = response.main.humidity;
+	// var pressure = response.main.pressure;
 
-	document.getElementById('weather').innerHTML = city + '<br>' + '<img src="http://openweathermap.org/img/w/'+response.weather[0].icon+'.png">' + '<br>' + response.weather[0].description + '<br> <br>' + fromKtoC(temp) +'ºC';
+	// document.getElementById('weather').innerHTML = city + '<br>' + '<img src="http://openweathermap.org/img/w/'+response.weather[0].icon+'.png">' + '<br>' + description + '<br> <br>' + fromKtoC(temp) +'ºC';
+	document.getElementById('city').innerHTML = city;
+	document.getElementById('icon').innerHTML = '<img src="http://openweathermap.org/img/w/'+response.weather[0].icon+'.png">';
+	document.getElementById('description').innerHTML = description;
+	document.getElementById('temp').innerHTML = fromKtoC(temp) +'ºC';
 }
 
 getAPIdata();
