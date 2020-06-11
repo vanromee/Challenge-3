@@ -23,12 +23,6 @@ h2 {
 	left: 60px;
 }
 
-img {
-	position: absolute;
-	left: 60px;
-	top: 60px;
-}
-
 p {
 	position: absolute;
 	text-align: center;
@@ -50,12 +44,6 @@ p {
 	text-align: center;
 }
 
-.vector1 {
-	position: absolute;
-	left: 195px;
-	top: 98px;
-}
-
 /*article{
 	position: absolute;
 	text-align: center;
@@ -71,21 +59,27 @@ p {
 	left: 50px;
 }
 
+img {
+	position: absolute;
+	left: 60px;
+	top: 50px;
+	width: 105px;
+	height: 105px;
+}
 
 .description {
 	position: absolute;
 	font-size: 18px;
-	left: 35px;
+	left: 45px;
 	top: 130px ;
 }
 
 .temp {
 	position: absolute;
 	font-size: 45px;
-	left: 30px;
+	left: 40px;
 	top: 175px;
 }
-
 
 
 .travel {
@@ -98,11 +92,6 @@ p {
 	border-radius: 37px;
 }
 
-.vector2 {
-	position: absolute;
-	left: 195px;
-	top: 100px;
-}
 
 .elevation {
 	position: absolute;
