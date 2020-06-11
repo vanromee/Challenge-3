@@ -1,3 +1,30 @@
+// Set api token for mapbox
+mapboxgl.accessToken = 'pk.eyJ1IjoidmFucm9tZWUiLCJhIjoiY2tiN3Rnc2U2MDh6dDJxdXNlaWt2Y3RrbyJ9.n5o9b02cf8Mkbu6ZU0xNUA';
+
+
+//MAP
+var map = new mapboxgl.Map({
+	container: 'map',
+	style: 'mapbox://styles/mapbox/streets-v11',
+	center: [4.322840, 52.067101],
+	zoom: 15,
+
+});
+
+map.addControl(new mapboxgl.NavigationControl());
+
+// pop up example
+// var myPopup = new mapboxgl
+// 	.Popup()
+// 	.setHTML();
+
+
+// var marker = new mapboxgl
+// 	.Marker()
+// 	.setLngLat([4.322840, 52.067101])
+// 	.setPopup(myPopup)
+// 	.addTo(map);
+
 
 //WEATHER API
 function getAPIdata() {
@@ -55,5 +82,17 @@ function onAPISuccess(response) {
 }
 
 getAPIdata();
+
+
+//MOVIES - example 4 multiple icons
+
+// var movies = [
+// 	{
+// 		name: ' ',
+// 		location: {lat: , lng: },
+// 	},
+
+
+// ]
 
 

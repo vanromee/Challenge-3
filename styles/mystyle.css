@@ -1,9 +1,19 @@
 body {
-	background: #ffffff;
 	color: #ffffff;
 	font-family: 'Roboto', sans-serif;
-
+	margin: 2vh 2vw;
 }
+
+#map {
+  height: 95vh;
+  width: 100vw;
+}
+
+
+img {
+	position: absolute;
+}
+
 
 /*ASTEROID*/
 .asteroids {
@@ -64,12 +74,6 @@ p {
 	left: 50px;
 }
 
-img {
-	position: absolute;
-	
-}
-
-
 .img1 {
 	position: absolute;
 	left: 60px;
@@ -90,7 +94,7 @@ img {
 	top: 175px;
 }
 
-
+/*TIME*/
 .travel {
 	position: absolute;
 	width: 224px;
@@ -107,6 +111,7 @@ img {
 	top: 100px;
 }
 
+/*MOVIE*/
 .movie {
 	position: absolute;
 	width: 224px;
