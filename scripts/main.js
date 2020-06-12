@@ -13,17 +13,12 @@ var map = new mapboxgl.Map({
 
 map.addControl(new mapboxgl.NavigationControl());
 
-// pop up example
-// var myPopup = new mapboxgl
-// 	.Popup()
-// 	.setHTML();
-
-
-// var marker = new mapboxgl
-// 	.Marker()
-// 	.setLngLat([4.322840, 52.067101])
-// 	.setPopup(myPopup)
-// 	.addTo(map);
+map.addControl(
+	new MapboxGeocoder({
+		accessToken: mapboxgl.accessToken,
+		mapboxgl : mapboxgl
+	}),
+	'bottom-left');
 
 
 //WEATHER API
@@ -94,5 +89,4 @@ getAPIdata();
 
 
 // ]
-
 
