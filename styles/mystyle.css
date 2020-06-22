@@ -6,7 +6,7 @@ body {
 
 #map {
   height: 95vh;
-  width: 100vw;
+  width: 98vw;
 }
 
 
@@ -95,31 +95,35 @@ p {
 }
 
 /*TIME*/
-.travel {
+
+/*.vector2 {
+	position: absolute;
+	left: 195px;
+	top: 100px;
+}*/
+
+/*MOVIE*/
+.movies {
 	position: absolute;
 	width: 224px;
 	height: 243px;
 	left: 38px;
 	top: 557px;
-	background: #5C9EAD;
-	border-radius: 37px;
-}
-
-.vector2 {
-	position: absolute;
-	left: 195px;
-	top: 100px;
-}
-
-/*MOVIE*/
-.movie {
-	position: absolute;
-	width: 224px;
-	height: 243px;
-	left: 38px;
-	top: 817px;
 	background: #326273;
 	border-radius: 37px;
+}
+
+.moviesTitle {
+	position: absolute;
+	font-size: 24px;
+	text-align: center;
+	left: 70px;
+}
+
+.searchMovie {
+	padding-left: 2px;
+	padding-top: 110px;
+	text-align: center;
 }
 
 .form-group {
@@ -130,7 +134,7 @@ p {
 #search {
 	color: #ffffff;
 	font-family: 'Roboto', sans-serif;
-	background-color: #326273;
+	background-color: #5C9EAD;
 	outline: none;
 	border-radius: 10px;
 	border: #000000;
