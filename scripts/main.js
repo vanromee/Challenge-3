@@ -101,7 +101,7 @@ getAPIdata();
 			data-movie-id="557"
 			/>
 		</section>
-		<div class="contnet">
+		<div class="content">
 			<p id="content-close">X</p>
 		</div>
 	</div>
@@ -111,9 +111,9 @@ getAPIdata();
 //SERIES
  
 var API_KEY = 'b0a0650097dd56358d4b5eb8879a89b2';
-var IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
+var IMAGE_URL = 'https://image.tmdb.org/t/p/w300';
 
-var URL = 'https://api.themoviedb.org/3/search/movie?api_key=b0a0650097dd56358d4b5eb8879a89b2';
+var URL = 'https://api.themoviedb.org/3/search/tv?api_key=b0a0650097dd56358d4b5eb8879a89b2';
 
 
 var buttonElement = document.getElementById('search');
@@ -138,10 +138,9 @@ function createShowContainer(series) {
 		<section class="section">
 			${showSection(series)}
 		</section>
-		<div class="contnet">
-			<p id="content-close"></p>
+		<div class="content">
+			<p-2 id="content-close"></p-2>
 		</div>
-
 	`;
 
 	showElement.innerHTML = showTemplate;

@@ -163,6 +163,6 @@ p {
 
 section {
 	display: flex;
-	width: 100%;
+	width: 95%;
 	overflow-x: auto;
 }
