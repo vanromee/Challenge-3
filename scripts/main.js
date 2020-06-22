@@ -109,9 +109,9 @@ getAPIdata();
 	*/
 
 //SERIES
- 
+
 var API_KEY = 'b0a0650097dd56358d4b5eb8879a89b2';
-var IMAGE_URL = 'https://image.tmdb.org/t/p/w300';
+var IMAGE_URL = 'https://image.tmdb.org/t/p/w185';
 
 var URL = 'https://api.themoviedb.org/3/search/tv?api_key=b0a0650097dd56358d4b5eb8879a89b2';
 
@@ -170,3 +170,4 @@ buttonElement.onclick = function(event) {
 	console.log('value: ', value);
 
 }
+

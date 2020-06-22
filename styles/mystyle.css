@@ -10,9 +10,6 @@ body {
 }
 
 
-img {
-	position: absolute;
-}
 
 
 /*ASTEROID*/
@@ -103,7 +100,7 @@ p {
 }*/
 
 /*SERIES*/
-.series {
+.tvSeries {
 	position: absolute;
 	width: 224px;
 	height: 243px;
@@ -161,8 +158,13 @@ p {
 
 }
 
-section {
+.seriesBox {
+	position: static;
+
+
+}
+
+section {-
 	display: flex;
-	width: 95%;
 	overflow-x: auto;
 }
