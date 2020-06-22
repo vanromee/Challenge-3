@@ -96,7 +96,7 @@ getAPIdata();
 
 var API_KEY = 'b0a0650097dd56358d4b5eb8879a89b2';
 
-var URL = 'https://api.themoviedb.org/3/search/movie?api_key=b0a0650097dd56358d4b5eb8879a89b2&query=furious';
+var URL = 'https://api.themoviedb.org/3/search/movie?api_key=b0a0650097dd56358d4b5eb8879a89b2';
 
 
 var buttonElement = document.getElementById('search');
@@ -107,8 +107,10 @@ buttonElement.onclick = function(event) {
 	event.preventDefault();
 	var value = inputElement.value;
 
+	var newUrl = URL + '&query=' + value;
 
-	fetch(URL)
+
+	fetch(newUrl)
 		.then((res) => res.json())
 		.then((data) => {
 			console.log('Data: ', data);
