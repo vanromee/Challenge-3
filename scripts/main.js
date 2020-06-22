@@ -92,11 +92,11 @@ getAPIdata();
 
 
 
-//MOVIES
-
+//SERIES
+ 
 var API_KEY = 'b0a0650097dd56358d4b5eb8879a89b2';
 
-var URL = 'https://api.themoviedb.org/3/search/movie?api_key=b0a0650097dd56358d4b5eb8879a89b2';
+var URL = 'https://api.themoviedb.org/3/search/tv?api_key=b0a0650097dd56358d4b5eb8879a89b2';
 
 
 var buttonElement = document.getElementById('search');

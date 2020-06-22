@@ -102,8 +102,8 @@ p {
 	top: 100px;
 }*/
 
-/*MOVIE*/
-.movies {
+/*SERIES*/
+.series {
 	position: absolute;
 	width: 224px;
 	height: 243px;
@@ -113,14 +113,14 @@ p {
 	border-radius: 37px;
 }
 
-.moviesTitle {
+.seriesTitle {
 	position: absolute;
 	font-size: 24px;
 	text-align: center;
-	left: 70px;
+	left: 60px;
 }
 
-.searchMovie {
+.searchShow {
 	padding-left: 2px;
 	padding-top: 110px;
 	text-align: center;
