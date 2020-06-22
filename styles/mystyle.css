@@ -121,3 +121,38 @@ p {
 	background: #326273;
 	border-radius: 37px;
 }
+
+.form-group {
+	margin-bottom: 10px;
+}
+
+
+#search {
+	color: #ffffff;
+	font-family: 'Roboto', sans-serif;
+	background-color: #326273;
+	outline: none;
+	border-radius: 10px;
+	border: #000000;
+	min-height: 38px;
+	font-weight: 400;
+	text-align: center;
+	cursor: pointer;
+	padding: .375rem .375rem;
+	font-size: 14px;
+
+}
+
+#inputValue {
+	width: 150px;
+	font-size: 14px;
+	font-weight: 400;
+	padding: .375rem .375rem;
+	outline: none;
+	color: #000000;
+	font-family: 'Roboto', sans-serif;
+	background-color: #ffffff;
+	border-radius: 10px;
+	border: 1px solid #cedfda;
+
+}
