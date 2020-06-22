@@ -91,24 +91,12 @@ getAPIdata();
 // ]
 
 
-// var movies = {
-// 	"url" : "https://api-gate2.movieglu.com/filmsNowShowing/?n=10",
-// 	"method" : "GET",
-// 	"timeout" : 0,
-// 	"headers" : {
-// 		"client" : "EDUC_7",
-// 		"x-api-key" : "Kw14rAw1Lm2Ehya3BTHA6865Y4ULuwGmaOcOt6zI",
-// 		"authorization" : "Basic RURVQ183X1hYOnd6NlBVRXZPWktYTQ==",
-// 		"territory" : "ES",
-// 		"api-version" : "v200",
-// 		"geolocation" : "-22.0;14.0 (Recommended location)",
-// 		"device-datetime" : "2018-09-14T08:30:17.360Z",
-// 	},
-// };
 
-// .then(function (response) {
-// 	console.log(response);
-// });
+//MOVIES
+
+var API_KEY = 'b0a0650097dd56358d4b5eb8879a89b2';
+
+var URL = 'https://api.themoviedb.org/3/search/movie?api_key=b0a0650097dd56358d4b5eb8879a89b2&query=furious';
 
 
 var buttonElement = document.getElementById('search');
@@ -118,6 +106,16 @@ var inputElement = document.getElementById('inputValue');
 buttonElement.onclick = function(event) {
 	event.preventDefault();
 	var value = inputElement.value;
+
+
+	fetch(URL)
+		.then((res) => res.json())
+		.then((data) => {
+			console.log('Data: ', data);
+		}) 
+		.catch((error) => {
+			console.log('Error: ', error);
+		});
 	console.log('value: ', value);
 
 }
