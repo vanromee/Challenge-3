@@ -91,17 +91,63 @@ getAPIdata();
 // ]
 
 
+/*
+
+	<div class="show">
+		<section class="section">
+			<img
+			src="https://image.tmdb.org/t/p/w500/ .jpg"
+			alt=""
+			data-movie-id="557"
+			/>
+		</section>
+		<div class="contnet">
+			<p id="content-close">X</p>
+		</div>
+	</div>
+
+	*/
 
 //SERIES
  
 var API_KEY = 'b0a0650097dd56358d4b5eb8879a89b2';
+var IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
 
-var URL = 'https://api.themoviedb.org/3/search/tv?api_key=b0a0650097dd56358d4b5eb8879a89b2';
+var URL = 'https://api.themoviedb.org/3/search/movie?api_key=b0a0650097dd56358d4b5eb8879a89b2';
 
 
 var buttonElement = document.getElementById('search');
 var inputElement = document.getElementById('inputValue');
+var seriesSearchable = document.getElementById('series-searchable');
 
+function showSection(series) {
+	return series.map((tv) => {
+		if (tv.poster_path) {
+			return `
+					<img src=${IMAGE_URL + tv.poster_path} data-tv-id=${tv.id}/>
+				`;
+			}
+		})
+}
+
+function createShowContainer(series) {
+	var showElement = document.createElement('div');
+	showElement.setAttribute('class', 'show');
+
+	var showTemplate = `
+		<section class="section">
+			${showSection(series)}
+		</section>
+		<div class="contnet">
+			<p id="content-close"></p>
+		</div>
+
+	`;
+
+	showElement.innerHTML = showTemplate;
+	return showElement;
+
+}
 
 buttonElement.onclick = function(event) {
 	event.preventDefault();
@@ -113,6 +159,10 @@ buttonElement.onclick = function(event) {
 	fetch(newUrl)
 		.then((res) => res.json())
 		.then((data) => {
+			//data.results []
+			var series = data.results;
+			var showBlock = createShowContainer(series);
+			seriesSearchable.appendChild(showBlock);
 			console.log('Data: ', data);
 		}) 
 		.catch((error) => {
