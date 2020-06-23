@@ -89,13 +89,6 @@ p {
 	top: 175px;
 }
 
-/*TIME*/
-
-/*.vector2 {
-	position: absolute;
-	left: 195px;
-	top: 100px;
-}*/
 
 /*SERIES*/
 .tvSeries {
@@ -139,7 +132,6 @@ p {
 	cursor: pointer;
 	padding: .375rem .375rem;
 	font-size: 14px;
-
 }
 
 #inputValue {
@@ -153,20 +145,19 @@ p {
 	background-color: #ffffff;
 	border-radius: 10px;
 	border: 1px solid #cedfda;
-
 }
 
 .seriesBox {
 	position: static;
-
-
 }
+
 
 section {
 	display: flex;
 	width: 98vw;
 	overflow-x: auto;
 }
+
 
 /*CITY*/
 .searchCity {

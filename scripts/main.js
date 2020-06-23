@@ -1,15 +1,14 @@
+//MAP
 // Set api token for mapbox
 mapboxgl.accessToken = 'pk.eyJ1IjoidmFucm9tZWUiLCJhIjoiY2tiN3Rnc2U2MDh6dDJxdXNlaWt2Y3RrbyJ9.n5o9b02cf8Mkbu6ZU0xNUA';
 
 var city = 'The Hague';
 
-//MAP
 var map = new mapboxgl.Map({
 	container: 'map',
 	style: 'mapbox://styles/mapbox/streets-v11',
 	center: [4.322840, 52.067101],
 	zoom: 15,
-
 });
 
 map.addControl(new mapboxgl.NavigationControl());
@@ -22,12 +21,9 @@ map.addControl(
 	'bottom-left');
 
 
-
 function getCenterData(){
 
-
 var center = map.getCenter();
-
 var lat = center.lat;
 var lng = center.lng;
 console.log(lat);
@@ -54,11 +50,10 @@ function onAPISuccess2(response){
 console.log("success");
 city = response.features[2].text;
 console.log(city);
-
 }
 
-//WEATHER API
 
+//WEATHER API
 function getAPIdata() {
 
 	var openWeatherMapUrl = 'https://api.openweathermap.org/data/2.5/weather';
@@ -85,7 +80,7 @@ function getAPIdata() {
 	});
 }
 
-
+//turn kelvin to celsius
 function fromKtoC(kelvin){
 	var celsius = kelvin - 273.15;
 	return celsius.toFixed(1);
@@ -115,19 +110,9 @@ getAPIdata();
 
 
 //SERIES
-
 var API_KEY = 'b0a0650097dd56358d4b5eb8879a89b2';
 var IMAGE_URL = 'https://image.tmdb.org/t/p/w185';
-
 var URL = 'https://api.themoviedb.org/3/search/tv?api_key=b0a0650097dd56358d4b5eb8879a89b2';
-
-// function posterSuccess(results) {
-// 	console.log(results);
-
-// 	var poster = results.poster_path;
-// 	var id = results.id;
-// }
-
 
 var buttonElement = document.getElementById('search');
 var inputElement = document.getElementById('inputValue');
@@ -142,18 +127,6 @@ function showSection(series) {
 		}
 	})
 }
-
-//marking poster on map
-// var posterMarker = document.createElement('div');
-
-// // posterMarker.style.backgroundImage = ('url("https://image.tmdb.org/t/p/w185"' + tv.poster_path);
-// posterMarker.style.backgroundImage = ('<img src="https://image.tmdb.org/t/p/w185"' + tv.poster_path + 'data-tv-id' + tv.id + '/>');
-// posterMarker.style.width = '90px';
-// posterMarker.style.height = '100px';
-
-// var marker = new mapboxgl.Marker(posterMarker).setLngLat([4.322840, 52.067101]).addTo(map);
-
-
 
 //create poster container
 function createShowContainer(series) {
@@ -175,11 +148,11 @@ function createShowContainer(series) {
 
 function renderSearchSeries(data){
 	//data.results []
-		seriesSearchable.innerHTML = '';
-			var series = data.results;
-			var showBlock = createShowContainer(series);
-			seriesSearchable.appendChild(showBlock);
-			console.log('Data: ', data);
+	seriesSearchable.innerHTML = '';
+	var series = data.results;
+	var showBlock = createShowContainer(series);
+	seriesSearchable.appendChild(showBlock);
+	console.log('Data: ', data);
 }
 
 buttonElement.onclick = function(event) {
@@ -187,7 +160,6 @@ buttonElement.onclick = function(event) {
 	var value = inputElement.value;
 
 	var newUrl = URL + '&query=' + value;
-
 
 	fetch(newUrl)
 		.then((response) => response.json())
@@ -198,14 +170,10 @@ buttonElement.onclick = function(event) {
 
 	inputElement.value = '';
 	console.log('value: ', value);
-
 }
 
-
 document.getElementById("iconWorking").onclick = function(){
-
-getCenterData();
-getAPIdata();
-
+	getCenterData();
+	getAPIdata();
 }
 
