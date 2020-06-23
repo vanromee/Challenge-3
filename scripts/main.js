@@ -2,13 +2,14 @@
 // Set api token for mapbox
 mapboxgl.accessToken = 'pk.eyJ1IjoidmFucm9tZWUiLCJhIjoiY2tiN3Rnc2U2MDh6dDJxdXNlaWt2Y3RrbyJ9.n5o9b02cf8Mkbu6ZU0xNUA';
 
-var city = 'The Hague';
+var city = 'Düsseldorf';
 
 var map = new mapboxgl.Map({
 	container: 'map',
 	style: 'mapbox://styles/mapbox/streets-v11',
-	center: [4.322840, 52.067101],
-	zoom: 15,
+	// center: [4.322840, 52.067101],
+	center: [6.7735, 51.2277],
+	zoom: 12,
 });
 
 map.addControl(new mapboxgl.NavigationControl());
