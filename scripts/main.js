@@ -20,16 +20,18 @@ map.addControl(
 	}),
 	'bottom-right');
 
+//api.openweathermap.org/data/2.5/weather?id={city id}&appid={your api key}
 
 //WEATHER API
+
 function getAPIdata() {
 
-	var url = 'https://api.openweathermap.org/data/2.5/weather';
-	var apiKey ='f85bc440fac6d0317cee7070d886a3a9';
+	var openWeatherMapUrl = 'https://api.openweathermap.org/data/2.5/weather';
+	var openWeatherMapApiKey ='f85bc440fac6d0317cee7070d886a3a9';
 	var city = 'den haag';
 
 	// construct request
-	var request = url + '?' + 'appid=' + apiKey + '&' + 'q=' + city; //form your request
+	var request = openWeatherMapUrl + '?' + 'appid=' + openWeatherMapApiKey + '&' + 'q=' + city; //form your request
 	
 	// get current weather
 	fetch(request)
@@ -68,7 +70,6 @@ function onAPISuccess(response) {
 	// var humidity = response.main.humidity;
 	// var pressure = response.main.pressure;
 
-	// document.getElementById('weather').innerHTML = city + '<br>' + '<img src="http://openweathermap.org/img/w/'+response.weather[0].icon+'.png">' + '<br>' + description + '<br> <br>' + fromKtoC(temp) +'ºC';
 	document.getElementById('city').innerHTML = city;
 //	document.getElementById('icon').innerHTML = '<img src="http://openweathermap.org/img/w/'+response.weather[0].icon+'.png">';
 	document.getElementById("iconWorking").src = "http://openweathermap.org/img/w/"+response.weather[0].icon+".png";
@@ -91,29 +92,19 @@ getAPIdata();
 // ]
 
 
-/*
-
-	<div class="show">
-		<section class="section">
-			<img
-			src="https://image.tmdb.org/t/p/w500/ .jpg"
-			alt=""
-			data-movie-id="557"
-			/>
-		</section>
-		<div class="content">
-			<p id="content-close">X</p>
-		</div>
-	</div>
-
-	*/
-
 //SERIES
 
 var API_KEY = 'b0a0650097dd56358d4b5eb8879a89b2';
 var IMAGE_URL = 'https://image.tmdb.org/t/p/w185';
 
 var URL = 'https://api.themoviedb.org/3/search/tv?api_key=b0a0650097dd56358d4b5eb8879a89b2';
+
+// function posterSuccess(results) {
+// 	console.log(results);
+
+// 	var poster = results.poster_path;
+// 	var id = results.id;
+// }
 
 
 var buttonElement = document.getElementById('search');
@@ -130,6 +121,19 @@ function showSection(series) {
 	})
 }
 
+//marking poster on map
+// var posterMarker = document.createElement('div');
+
+// // posterMarker.style.backgroundImage = ('url("https://image.tmdb.org/t/p/w185"' + tv.poster_path);
+// posterMarker.style.backgroundImage = ('<img src="https://image.tmdb.org/t/p/w185"' + tv.poster_path + 'data-tv-id' + tv.id + '/>');
+// posterMarker.style.width = '90px';
+// posterMarker.style.height = '100px';
+
+// var marker = new mapboxgl.Marker(posterMarker).setLngLat([4.322840, 52.067101]).addTo(map);
+
+
+
+//create poster container
 function createShowContainer(series) {
 	var showElement = document.createElement('div');
 	showElement.setAttribute('class', 'show');
@@ -154,8 +158,6 @@ function renderSearchSeries(data){
 			var showBlock = createShowContainer(series);
 			seriesSearchable.appendChild(showBlock);
 			console.log('Data: ', data);
-
-
 }
 
 buttonElement.onclick = function(event) {
@@ -166,7 +168,7 @@ buttonElement.onclick = function(event) {
 
 
 	fetch(newUrl)
-		.then((res) => res.json())
+		.then((response) => response.json())
 		.then(renderSearchSeries) 
 		.catch((error) => {
 			console.log('Error: ', error);
