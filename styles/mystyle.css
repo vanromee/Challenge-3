@@ -164,7 +164,7 @@ p {
 
 }
 
-section {-
+section {
 	display: flex;
 	overflow-x: auto;
 }

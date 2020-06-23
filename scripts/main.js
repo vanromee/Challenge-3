@@ -123,11 +123,11 @@ var seriesSearchable = document.getElementById('series-searchable');
 function showSection(series) {
 	return series.map((tv) => {
 		if (tv.poster_path) {
-			return `
-					<img src=${IMAGE_URL + tv.poster_path} data-tv-id=${tv.id}/>
-				`;
-			}
-		})
+			return `<img src=${IMAGE_URL + tv.poster_path} 
+			data-tv-id=${tv.id}
+			/>`;
+		}
+	})
 }
 
 function createShowContainer(series) {
@@ -145,6 +145,16 @@ function createShowContainer(series) {
 
 	showElement.innerHTML = showTemplate;
 	return showElement;
+}
+
+function renderSearchSeries(data){
+	//data.results []
+		seriesSearchable.innerHTML = '';
+			var series = data.results;
+			var showBlock = createShowContainer(series);
+			seriesSearchable.appendChild(showBlock);
+			console.log('Data: ', data);
+
 
 }
 
@@ -157,16 +167,12 @@ buttonElement.onclick = function(event) {
 
 	fetch(newUrl)
 		.then((res) => res.json())
-		.then((data) => {
-			//data.results []
-			var series = data.results;
-			var showBlock = createShowContainer(series);
-			seriesSearchable.appendChild(showBlock);
-			console.log('Data: ', data);
-		}) 
+		.then(renderSearchSeries) 
 		.catch((error) => {
 			console.log('Error: ', error);
 		});
+
+	inputElement.value = '';
 	console.log('value: ', value);
 
 }
