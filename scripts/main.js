@@ -19,7 +19,7 @@ map.addControl(
 		accessToken: mapboxgl.accessToken,
 		mapboxgl : mapboxgl
 	}),
-	'bottom-right');
+	'bottom-left');
 
 
 
