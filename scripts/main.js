@@ -1,6 +1,7 @@
 // Set api token for mapbox
 mapboxgl.accessToken = 'pk.eyJ1IjoidmFucm9tZWUiLCJhIjoiY2tiN3Rnc2U2MDh6dDJxdXNlaWt2Y3RrbyJ9.n5o9b02cf8Mkbu6ZU0xNUA';
 
+var city = 'The Hague';
 
 //MAP
 var map = new mapboxgl.Map({
@@ -20,7 +21,41 @@ map.addControl(
 	}),
 	'bottom-right');
 
-//api.openweathermap.org/data/2.5/weather?id={city id}&appid={your api key}
+
+
+function getCenterData(){
+
+
+var center = map.getCenter();
+
+var lat = center.lat;
+var lng = center.lng;
+console.log(lat);
+console.log(lng);
+ 
+var url = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + lng + "," + lat + ".json?access_token=" + mapboxgl.accessToken;
+
+
+fetch(url)
+
+.then(function(response) {
+	if(!response.ok) throw Error(response.statusText);
+		return response.json();
+	})
+
+	.then(function(response) {
+		onAPISuccess2(response);	
+		console.log(response);
+	});
+}
+
+function onAPISuccess2(response){
+//call to variables
+console.log("success");
+city = response.features[2].text;
+console.log(city);
+
+}
 
 //WEATHER API
 
@@ -28,7 +63,7 @@ function getAPIdata() {
 
 	var openWeatherMapUrl = 'https://api.openweathermap.org/data/2.5/weather';
 	var openWeatherMapApiKey ='f85bc440fac6d0317cee7070d886a3a9';
-	var city = 'den haag';
+	console.log(city);
 
 	// construct request
 	var request = openWeatherMapUrl + '?' + 'appid=' + openWeatherMapApiKey + '&' + 'q=' + city; //form your request
@@ -37,7 +72,7 @@ function getAPIdata() {
 	fetch(request)
 	
 	// parse to JSON format
-	.then(function(response) {
+	.then(function(response){
 		if(!response.ok) throw Error(response.statusText);
 		return response.json();
 	})
@@ -46,7 +81,7 @@ function getAPIdata() {
 	.then(function(response) {
 		// render weatherCondition
 		onAPISuccess(response);	
-		console.log(response);
+		//console.log(response);
 	});
 }
 
@@ -58,7 +93,7 @@ function fromKtoC(kelvin){
 
 
 function onAPISuccess(response) {
-	console.log(response.main);
+	//console.log(response.main);
 
 	var icon = 'http://openweathermap.org/img/w/' + response.weather[0].icon+'.png';
 	var description = response.weather[0].description;
@@ -71,25 +106,12 @@ function onAPISuccess(response) {
 	// var pressure = response.main.pressure;
 
 	document.getElementById('city').innerHTML = city;
-//	document.getElementById('icon').innerHTML = '<img src="http://openweathermap.org/img/w/'+response.weather[0].icon+'.png">';
 	document.getElementById("iconWorking").src = "http://openweathermap.org/img/w/"+response.weather[0].icon+".png";
 	document.getElementById('description').innerHTML = description;
 	document.getElementById('temp').innerHTML = fromKtoC(temp) +'ºC';
 }
 
 getAPIdata();
-
-
-//MOVIES - example 4 multiple icons
-
-// var movies = [
-// 	{
-// 		name: ' ',
-// 		location: {lat: , lng: },
-// 	},
-
-
-// ]
 
 
 //SERIES
@@ -176,6 +198,14 @@ buttonElement.onclick = function(event) {
 
 	inputElement.value = '';
 	console.log('value: ', value);
+
+}
+
+
+document.getElementById("iconWorking").onclick = function(){
+
+getCenterData();
+getAPIdata();
 
 }
 
