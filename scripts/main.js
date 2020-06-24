@@ -7,9 +7,9 @@ var city = 'Düsseldorf';
 var map = new mapboxgl.Map({
 	container: 'map',
 	style: 'mapbox://styles/mapbox/streets-v11',
-	// center: [4.322840, 52.067101],
 	center: [6.7735, 51.2277],
 	zoom: 12,
+	pitch: 40,
 });
 
 map.addControl(new mapboxgl.NavigationControl());
